@@ -10,7 +10,7 @@ import java.lang.reflect.Proxy;
  * @description:
  * @date 18:44 2023/3/6
  */
-public class Client {
+public class JdkProxyClient {
     public static void main(String[] args) {
         People worker = new Worker();
         People child = new Child();

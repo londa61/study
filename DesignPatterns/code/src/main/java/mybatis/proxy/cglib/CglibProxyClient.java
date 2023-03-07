@@ -12,7 +12,7 @@ import net.sf.cglib.proxy.NoOp;
  * @description:
  * @date 19:23 2023/3/6
  */
-public class Client {
+public class CglibProxyClient {
     public static void main(String[] args) {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(People.class);
