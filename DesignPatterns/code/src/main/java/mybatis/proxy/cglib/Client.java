@@ -48,13 +48,24 @@ public class Client {
         System.out.println("————————————————————————————————\n");
         People lazyPeople = new People(35);
         System.out.println(lazyPeople.getAge());
-        //访问延迟加载对象
+        //访问LazyLoader延迟加载对象
         Name name = lazyPeople.getName();
         System.out.println(name.getFirstName());
         System.out.println(name.getLastName());
         System.out.println("after...");
         //当再次访问延迟加载对象时,就不会再执行回调了
         System.out.println(name.getFirstName());
+
+        System.out.println("————————————————————————————————\n");
+        People alwaysLazyPeople = new People(35);
+        System.out.println(lazyPeople.getAge() + "\n");
+        //访问Dispatcher延迟加载对象
+        Address address = alwaysLazyPeople.getAddress();
+        System.out.println(address.getCounty() + "\n");
+        System.out.println(address.getCity() + "\n");
+        System.out.println("after...");
+        //当再次访问延迟加载对象时,依然执行回调
+        System.out.println(address.getCounty() + "\n");
     }
 
 }

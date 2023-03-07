@@ -13,6 +13,7 @@ import net.sf.cglib.proxy.Enhancer;
 public class People {
     private int age;
     private Name name;
+    private Address address;
 
     public People() {
     }
@@ -20,12 +21,19 @@ public class People {
     public People(int age) {
         this.age = age;
         this.name = createName();
+        this.address = createAddress();
     }
 
     protected Name createName() {
         Enhancer enhancer=new Enhancer();
         enhancer.setSuperclass(Name.class);
         return (Name) Enhancer.create(Name.class,new LazyLoaderImpl());
+    }
+
+    private Address createAddress() {
+        Enhancer enhancer=new Enhancer();
+        enhancer.setSuperclass(Address.class);
+        return (Address) Enhancer.create(Address.class,new DispatcherImpl());
     }
 
     public void speak(String word) {
@@ -47,5 +55,9 @@ public class People {
 
     public Name getName() {
         return name;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 }
