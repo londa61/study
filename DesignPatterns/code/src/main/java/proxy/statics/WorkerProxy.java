@@ -9,7 +9,8 @@ package proxy.statics;
  * @date 11:39 2023/3/7
  */
 public class WorkerProxy implements People {
-    private People target;
+
+    private final People target;
 
     public WorkerProxy(People people) {
         this.target = people;
