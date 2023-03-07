@@ -1,4 +1,4 @@
-package mybatis.proxy.jdk;
+package proxy.jdk;
 
 /**
  * zlz
@@ -12,5 +12,11 @@ public class Worker implements People {
     @Override
     public void speak(String word) {
         System.out.println("a worker speak " + word);
+    }
+
+    @Override
+    public String work(String order) {
+        System.out.println("a worker work " + order);
+        return order + " with work";
     }
 }

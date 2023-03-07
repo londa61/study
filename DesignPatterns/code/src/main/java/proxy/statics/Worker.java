@@ -1,4 +1,4 @@
-package mybatis.proxy.statics;
+package proxy.statics;
 
 /**
  * zlz

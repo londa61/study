@@ -1,4 +1,4 @@
-package mybatis.proxy.jdk;
+package proxy.jdk;
 
 /**
  * zlz
@@ -14,4 +14,11 @@ public interface People {
      * @param word word
      */
     void speak(String word);
+
+    /**
+     * work
+     * @param order order
+     * @return order
+     */
+    String work(String order);
 }

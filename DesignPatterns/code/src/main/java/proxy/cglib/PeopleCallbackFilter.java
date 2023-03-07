@@ -1,4 +1,4 @@
-package mybatis.proxy.cglib;
+package proxy.cglib;
 
 import net.sf.cglib.proxy.CallbackFilter;
 

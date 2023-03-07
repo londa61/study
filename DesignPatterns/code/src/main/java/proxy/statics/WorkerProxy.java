@@ -1,4 +1,4 @@
-package mybatis.proxy.statics;
+package proxy.statics;
 
 /**
  * zlz
@@ -25,8 +25,8 @@ public class WorkerProxy implements People {
     @Override
     public String work(String order) {
         System.out.println("WorkerProxy work before");
-        target.work(order);
+        String result = target.work(order);
         System.out.println("WorkerProxy work after");
-        return order + "after proxy";
+        return result + " after proxy";
     }
 }
